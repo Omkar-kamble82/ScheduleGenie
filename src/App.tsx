@@ -1,13 +1,37 @@
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
+
 import Navbar from "./components/shared/Navbar";
-import Homebanner from "./components/shared/home/Homebanner";
+import Home from "./pages/Home";
+import Trips from "./pages/Trips";
+import Notfound from "./pages/Notfound";
 
 function App() {
+  const auth = getAuth();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate("/");
+      } else if (location.pathname === "/") {
+        navigate("/trips");
+      }
+    });
+  
+    return () => unsubscribe();
+  }, [auth, navigate]);
+  
   return (
-    <>
+    <div className="">
       <Navbar />
-      <Homebanner />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trips" element={<Trips />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+    </div>
   )
 }
 
