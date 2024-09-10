@@ -45,13 +45,10 @@ const CreateSchedule = () => {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
     const final_prompt = ai_prompt
     .replace('{task}',values.task)
     .replace('{days}',values.days.toString())
-    .replace('{hours}',values.days.toString())
-
-    console.log(final_prompt)
+    .replace('{hours}',values.hours.toString())
     
     setLoading(true)
     try{
@@ -114,7 +111,7 @@ const CreateSchedule = () => {
             name="task"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xl font-semibold text-secondary">Enter the amount of hours you can put in daily <span className="text-[14px] font-semibold">(2 - 18 hours)</span></FormLabel>
+                <FormLabel className="text-xl font-semibold text-secondary">Enter the task you want to achieve </FormLabel>
                 <FormControl>
                   <Textarea  placeholder="Create a todo app using react...." {...field}/>
                 </FormControl>

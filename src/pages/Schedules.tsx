@@ -1,7 +1,3 @@
-
-// type Props = {}
-// props: Props
-
 import Loading from "@/components/shared/Loading"
 import { Button } from "@/components/ui/button"
 import { getSchedules, ScheduleType } from "@/Firebase/functions"
@@ -38,7 +34,7 @@ const Schedules = () => {
           <div className="mx-[15px] flex items-center gap-3 flex-wrap">
             {schedules.map((schedule) => (
               <Link key={schedule.id} to={`/schedule/${schedule.id}`}>
-                <div className="w-[150px] h-[150px] flex flex-col items-start justify-center border-[2px] border-primary p-2 rounded-lg shadow-xl hover:scale-110 transition-all bg-white">
+                <div className="w-[160px] h-[100px] flex flex-col items-start justify-center border-[2px] border-primary p-2 rounded-lg shadow-xl hover:scale-110 transition-all bg-white">
                   <p className="font-bold text-sm text-secondary">Title: <span className="text-primary">{schedule.userSeletion.title}</span></p>
                   <p className="font-bold text-sm text-secondary">Days: <span className="text-primary">{schedule.userSeletion.days}</span></p>
                 </div>

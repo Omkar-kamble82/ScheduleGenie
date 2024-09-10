@@ -15,7 +15,115 @@ export type ScheduleType = {
         title: string
     },
     scheduledata: {
-        day: {
+        day1?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day2?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day3?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day4?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day5?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day6?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day7?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day8?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day9?: {
+            afternoon: [{
+                description: "",
+                duration: "",
+                task: ""
+            }],
+            morning: [{
+                description: "",
+                duration: "",
+                task: ""
+            }]
+        }
+        day10?: {
             afternoon: [{
                 description: "",
                 duration: "",
