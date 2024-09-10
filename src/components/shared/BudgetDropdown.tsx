@@ -16,12 +16,12 @@ const Dropdown = (props: Props) => {
         <div className="relative z-[3]">
             <Select onValueChange={props.onChangeHandler} defaultValue={props.value}>
                 <SelectTrigger className="">
-                    <SelectValue className="text-secondary" placeholder="A Budget Trip (i.e upto 1000$)..." />
+                    <SelectValue className="text-secondary" placeholder="A Budget Trip" />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="0 - 1000$">A Budget Trip (i.e upto 1000$)</SelectItem>
-                    <SelectItem value="1000$ - 2500$">A Grand Trip (i.e 1000 - 2500$)</SelectItem>
-                    <SelectItem value="2500$+">A Luxury Trip (i.e 2500$ + )</SelectItem>
+                    <SelectItem value="Cheap Budget">A Budget Trip</SelectItem>
+                    <SelectItem value="Medium Budget">A Grand Trip</SelectItem>
+                    <SelectItem value="High Budget">A Luxury Trip</SelectItem>
                 </SelectContent>
             </Select>
         </div>

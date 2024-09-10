@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Trips from "./pages/Trips";
 import Notfound from "./pages/Notfound";
 import Createtrip from "./pages/Createtrip";
+import TripsInfo from "./pages/TripsInfo";
 
 function App() {
   const auth = getAuth();
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/trips" element={<Trips />} />
         <Route path="/trip/generate" element={<Createtrip />} />
+        <Route path="/trip/:id" element={<TripsInfo />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </div>
