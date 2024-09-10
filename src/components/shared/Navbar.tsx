@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className='flex bg-white justify-between items-center p-2 shadow-xl border-b-[1px] border-b-secondary w-screen lg:px-[20px]'>
-        <a href={authenticated ? `/trips`: `/`}><img className='h-[40px] sm:h-[60px] cursor-pointer' src="/logo.png" alt="logo-img"/></a>
+        <a href={authenticated ? `/schedules`: `/`}><img className='h-[40px] sm:h-[60px] cursor-pointer' src="/logo.png" alt="logo-img"/></a>
         {authenticated ? (
             <Menu/>
           ) : (

@@ -4,10 +4,10 @@ import { useEffect } from "react";
 
 import Navbar from "./components/shared/Navbar";
 import Home from "./pages/Home";
-import Trips from "./pages/Trips";
+import Schedules from "./pages/Schedules";
 import Notfound from "./pages/Notfound";
-import Createtrip from "./pages/Createtrip";
-import TripsInfo from "./pages/TripsInfo";
+import CreateSchedule from "./pages/CreateSchedule";
+import ScheduleInfo from "./pages/ScheduleInfo";
 
 function App() {
   const auth = getAuth();
@@ -18,7 +18,7 @@ function App() {
       if (!user) {
         navigate("/");
       } else if (location.pathname === "/") {
-        navigate("/trips");
+        navigate("/schedules");
       }
     });
   
@@ -30,9 +30,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/trips" element={<Trips />} />
-        <Route path="/trip/generate" element={<Createtrip />} />
-        <Route path="/trip/:id" element={<TripsInfo />} />
+        <Route path="/schedules" element={<Schedules />} />
+        <Route path="/schedule/generate" element={<CreateSchedule />} />
+        <Route path="/schedule/:id" element={<ScheduleInfo />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </div>
