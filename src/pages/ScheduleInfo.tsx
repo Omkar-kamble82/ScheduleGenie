@@ -35,7 +35,7 @@ const ScheduleInfo = () => {
       { !loading && schedule ? (
         <div className="min-h-screen bg-[#eee]">
           <img className="h-[35vh] w-full object-cover" src="/banners/2.jpg" alt="banner-img"/>
-          <p>{schedule.userSeletion.title}</p>
+          <p>Title: {schedule.userSeletion.title}</p>
         </div>
         ) 
         : 
