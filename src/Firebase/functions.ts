@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup, signOut, getAuth } from "firebase/auth";
 import { auth, db } from "./config";
 import { toast } from "sonner"
-import { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore";
 import { formSchema } from "@/pages/CreateSchedule";
 import { z } from "zod";
 
@@ -208,7 +208,6 @@ export const getSchedule = async (id: string) => {
 }
 
 export const getSchedules = async () => {
-    console.log("000")
     const auth = getAuth();
     const user = auth.currentUser;
     if (!user) {
@@ -235,5 +234,31 @@ export const getSchedules = async () => {
         return schedulesarr
     } catch {
         toast.error("Something went wrong")
+    }
+}
+
+export const DeleteSchedule = async (id: string) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (!user) {
+        toast.error("User not authenticated");
+        return;
+    }
+
+    try {
+        const username = user.email as string
+        const docRefschedule = doc(db, "UsersSG", username)
+        const docSnapschedule = await getDoc(docRefschedule)
+        if (!docSnapschedule.exists()) return;
+        const schedules: string[] = docSnapschedule.data().schedules
+        const sch: string[] = schedules.filter(sched => sched !== id)
+        await updateDoc(docRefschedule, {
+            schedules: sch
+        })
+        await deleteDoc(doc(db, "Schedules", id))
+        await getSchedules()
+        toast.success("Schedules deleted successfully")
+    } catch {
+        toast.error("Error deleting schedule")
     }
 }

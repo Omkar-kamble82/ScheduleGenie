@@ -48,8 +48,7 @@ const CreateSchedule = () => {
     const final_prompt = ai_prompt
     .replace('{task}',values.task)
     .replace('{days}',values.days.toString())
-    .replace('{hours}',values.hours.toString())
-    
+    .replace('{hours}',(values.hours / 2).toString())
     setLoading(true)
     try{
       const result = await chatSession.sendMessage(final_prompt)
@@ -85,7 +84,7 @@ const CreateSchedule = () => {
             name="days"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xl font-semibold text-secondary">Enter the number of days you would like to work on this task <span className="text-[14px] font-semibold">(2 - 10 days)</span></FormLabel>
+                <FormLabel className="text-xl font-semibold text-secondary">Enter the number of days you would like to work on this task <span className="text-[12px] font-semibold">(2 - 10 days)</span></FormLabel>
                 <FormControl>
                   <Input type="number" min={2} max={10} placeholder="2" {...field} onChange={event => field.onChange(+event.target.value)}/>
                 </FormControl>
@@ -98,7 +97,7 @@ const CreateSchedule = () => {
             name="hours"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xl font-semibold text-secondary">Enter the amount of hours you can put in daily <span className="text-[14px] font-semibold">(2 - 18 hours)</span></FormLabel>
+                <FormLabel className="text-xl font-semibold text-secondary">Enter the amount of hours you can put in daily <span className="text-[12px] font-semibold">(2 - 18 hours)</span></FormLabel>
                 <FormControl>
                   <Input type="number" min={2} max={10} placeholder="2" {...field} onChange={event => field.onChange(+event.target.value)}/>
                 </FormControl>
@@ -111,7 +110,7 @@ const CreateSchedule = () => {
             name="task"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xl font-semibold text-secondary">Enter the task you want to achieve </FormLabel>
+                <FormLabel className="text-xl font-semibold text-secondary">Enter the task you want to achieve <span className="text-[12px] font-semibold">(Explain in detail)</span></FormLabel>
                 <FormControl>
                   <Textarea  placeholder="Create a todo app using react...." {...field}/>
                 </FormControl>

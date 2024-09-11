@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
   
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
-export const ai_prompt = "Create a time table for {task} within {days} days working for {hours} hours a day in JSON format"
+export const ai_prompt = "Create a schedule for {task} for {days} days working for {hours} hours a day dividing the day in afternoon and morning with objects containing task, duration and description in JSON format"
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
 });
