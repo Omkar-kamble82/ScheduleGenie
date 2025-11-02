@@ -1,7 +1,8 @@
-# ScheduleGenie: AI based Schedule Generator: Gemini AI, Shadcn, React.js, Firebase, Firebase-Auth, Firestore Database, Tailwind.
+# 🕒 ScheduleGenie — AI-Powered Schedule Generator
 
 
-<a href="https://schedule-genie.vercel.app/">ScheduleGenie </a> is a full-stack AI-powered scheduling application that utilizes the Gemini API. Users can input their desired duration, time, and tasks, and ScheduleGenie will generate a timetable to help them achieve their goals.
+<a href="https://schedule-genie.vercel.app/">ScheduleGenie</a> is a full-stack AI scheduling application that leverages Gemini AI to help users plan and optimize their daily tasks.
+Users can input their goals, available time, and task durations — and ScheduleGenie automatically generates a personalized, efficient timetable.
 <br/>
 <br/>
 
@@ -10,13 +11,41 @@
 <img src="https://github.com/user-attachments/assets/cc796093-32f9-4830-af2c-da7906e812d6" width="300px"/>
 <img src="https://github.com/user-attachments/assets/f14d4973-b299-4bee-b187-82d4b8f5c52f" width="400px" height="240px"/>
 
-<h2>Key Features:</h2>
+## 🧱 Tech Stack
 
-- AI based Schedule Generator
-- Gemini AI
-- Firebase services (includeing Auth, Database)
-- Hosting using Vecel
+| Layer         | Technologies                              |
+| :-------------- | :--------------------------------------- |
+| Frontend |	React.js, Tailwind CSS, Shadcn UI |
+| AI Integration |	Gemini API |
+| Backend & Database | 	Firebase Firestore |
+| Authentication |	Firebase Auth |
+| Deployment |	Vercel |
 
+<h2>🚀 Features</h2>
+
+<h3>🧠 AI-Generated Schedules</h3>
+
+- Integrates Gemini API to intelligently generate personalized timetables.
+- Balances task durations and available hours to create optimized schedules.
+- Provides contextual and structured outputs users can directly follow.
+
+<h3>🔐 Authentication & Data Persistence</h3>
+
+- Built with Firebase Authentication for secure user logins.
+- Stores user inputs and generated schedules in Firestore Database for persistent access.
+
+<h3>🎨 Modern, Responsive UI</h3>
+
+- Designed using Shadcn UI and Tailwind CSS for a sleek and responsive interface.
+- Optimized for both desktop and mobile screens.
+
+<h3>🔮 Future Enhancements</h3>
+
+- Add calendar integration (Google Calendar / Outlook).
+- Enable task prioritization and progress tracking.
+- Add reminder notifications and sharing features.
+- Introduce AI suggestions for optimal time-slot allocation.
+  
 ### Cloning the repository
 
 ```shell
